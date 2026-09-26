@@ -1,0 +1,28 @@
+:root { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif; color: #111827; background: #f3f4f6; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: #f3f4f6; }
+button, input, select { font: inherit; }
+.app { max-width: 720px; margin: 0 auto; padding: calc(16px + env(safe-area-inset-top)) 14px calc(30px + env(safe-area-inset-bottom)); }
+.topbar { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:14px; }
+h1 { margin:0; font-size:30px; } .topbar p { margin:3px 0 0; color:#6b7280; }
+h2 { margin:0 0 14px; font-size:20px; } h3 { margin:18px 0 10px; font-size:16px; }
+.card { background:white; border-radius:18px; padding:18px; margin:12px 0; box-shadow:0 2px 12px rgba(0,0,0,.06); }
+label { display:block; font-size:14px; font-weight:600; margin-bottom:7px; color:#374151; }
+input, select { width:100%; padding:13px 12px; border:1px solid #d1d5db; border-radius:12px; background:#fff; color:#111827; outline:none; }
+input:focus, select:focus { border-color:#6b7280; box-shadow:0 0 0 3px rgba(107,114,128,.12); }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.info { margin-top:12px; line-height:1.5; color:#4b5563; font-size:14px; }
+.hint { color:#6b7280; font-size:13px; line-height:1.45; margin:12px 0 0; }
+.result { text-align:center; padding:24px 18px; }
+.resultLabel { font-size:13px; letter-spacing:.08em; color:#6b7280; font-weight:700; }
+.meters { font-size:48px; font-weight:800; margin:5px 0; }
+.computed { color:#4b5563; font-size:14px; min-height:20px; }
+.error { color:#b91c1c; font-weight:600; margin-top:8px; }
+button, .fileButton { border:0; border-radius:12px; padding:12px 14px; background:#e5e7eb; color:#111827; font-weight:700; cursor:pointer; text-align:center; }
+button.primary { background:#111827; color:#fff; } button.danger { background:#fee2e2; color:#991b1b; }
+.secondary { background:#e5e7eb; } .hidden { display:none !important; }
+.manageButtons { display:flex; flex-wrap:wrap; gap:9px; margin-top:14px; }
+.formRow { margin-bottom:12px; }
+details summary { cursor:pointer; font-weight:800; }
+footer { color:#6b7280; text-align:center; font-size:12px; padding:10px 20px 30px; }
+@media (max-width:520px) { .grid2 { grid-template-columns:1fr; } h1 { font-size:26px; } .meters { font-size:42px; } }

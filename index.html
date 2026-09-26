@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1f2937">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Calcolo Ordito">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Calcolo Ordito</title>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <h1>Calcolo Ordito</h1>
+        <p>Metri di ordito rimanenti</p>
+      </div>
+      <button id="installBtn" class="secondary hidden">Installa</button>
+    </header>
+
+    <section class="card">
+      <label for="loomSelect">Telaio</label>
+      <select id="loomSelect"></select>
+      <div id="loomInfo" class="info"></div>
+    </section>
+
+    <section class="card">
+      <h2>Misura rocca</h2>
+      <div class="grid2">
+        <div>
+          <label for="diameter">Diametro (mm)</label>
+          <input id="diameter" inputmode="decimal" placeholder="es. 308,8">
+        </div>
+        <div>
+          <label for="circumference">Circonferenza (mm)</label>
+          <input id="circumference" inputmode="decimal" placeholder="es. 970">
+        </div>
+      </div>
+      <p class="hint">Puoi inserire il diametro oppure la circonferenza. Se inserisci la circonferenza, il diametro viene calcolato automaticamente.</p>
+    </section>
+
+    <section class="result card">
+      <div class="resultLabel">METRI RIMANENTI</div>
+      <div id="meters" class="meters">—</div>
+      <div id="diameterComputed" class="computed"></div>
+      <div id="error" class="error"></div>
+    </section>
+
+    <section class="card">
+      <details>
+        <summary>⚙️ Gestione macchine</summary>
+        <div class="manageButtons">
+          <button id="editBtn">Modifica macchina</button>
+          <button id="newBtn">Nuova macchina</button>
+          <button id="resetBtn" class="danger">Ripristina dati originali</button>
+          <button id="exportBtn">Esporta dati</button>
+          <label class="fileButton">Importa dati<input id="importInput" type="file" accept="application/json" hidden></label>
+        </div>
+      </details>
+    </section>
+
+    <section id="editor" class="card hidden">
+      <h2 id="editorTitle">Modifica macchina</h2>
+      <div class="formRow"><label>Nome</label><input id="eName"></div>
+      <div class="formRow"><label>Filato</label><input id="eYarn"></div>
+      <div class="grid2">
+        <div><label>Densità fili/cm</label><input id="eDensity" inputmode="decimal"></div>
+        <div><label>Diametro tubo (mm)</label><input id="eTube" inputmode="decimal"></div>
+      </div>
+      <h3>Taratura</h3>
+      <div class="grid2">
+        <div><label>Diametro riferimento (mm)</label><input id="eCalD" inputmode="decimal"></div>
+        <div><label>Metri reali</label><input id="eCalM" inputmode="decimal"></div>
+      </div>
+      <p class="hint">Esempio: 294 mm = 200 m per Tarocchi 15.</p>
+      <div class="manageButtons">
+        <button id="saveBtn" class="primary">Salva</button>
+        <button id="cancelBtn">Annulla</button>
+        <button id="deleteBtn" class="danger">Elimina</button>
+      </div>
+    </section>
+
+    <footer>Funziona anche offline. I dati delle macchine restano memorizzati su questo dispositivo.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
