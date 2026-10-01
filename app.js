@@ -462,7 +462,7 @@ if ('serviceWorker' in navigator) {
 AVVIO CON PASSWORD
 ========================= */
 
-const ACCESS_PASSWORD = "gessica";
+const ACCESS_PASSWORD = "Gessica";
 
 const enteredPassword = prompt(
     "Inserisci la password per accedere:"
