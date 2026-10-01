@@ -458,4 +458,29 @@ if ('serviceWorker' in navigator) {
    AVVIO
 ========================= */
 
+/* =========================
+AVVIO CON PASSWORD
+========================= */
+
+const ACCESS_PASSWORD = "gessica";
+
+const enteredPassword = prompt(
+    "Inserisci la password per accedere:"
+);
+
+if (enteredPassword !== ACCESS_PASSWORD) {
+    document.body.innerHTML = `
+        <div style="
+            text-align:center;
+            margin-top:100px;
+            font-family:Arial,sans-serif;
+        ">
+            <h2>Accesso negato</h2>
+            <p>Password non corretta.</p>
+        </div>
+    `;
+
+    throw new Error("Password errata");
+}
+
 renderLooms();
