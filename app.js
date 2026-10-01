@@ -462,13 +462,18 @@ if ('serviceWorker' in navigator) {
 AVVIO CON PASSWORD
 ========================= */
 
-const ACCESS_PASSWORD = "Gessica";
+const ACCESS_PASSWORD = "gessica";
 
-const enteredPassword = prompt(
-    "Inserisci la password per accedere:"
-);
+function chiediPassword() {
+    const enteredPassword = prompt(
+        "Inserisci la password per accedere:"
+    );
 
-if (enteredPassword !== ACCESS_PASSWORD) {
+    if (enteredPassword === ACCESS_PASSWORD) {
+        renderLooms();
+        return;
+    }
+
     document.body.innerHTML = `
         <div style="
             text-align:center;
@@ -477,10 +482,17 @@ if (enteredPassword !== ACCESS_PASSWORD) {
         ">
             <h2>Accesso negato</h2>
             <p>Password non corretta.</p>
+            <button onclick="location.reload()" style="
+                padding:12px 25px;
+                font-size:16px;
+                border-radius:8px;
+                border:1px solid #999;
+                background:#f2f2f2;
+            ">
+                Riprova
+            </button>
         </div>
     `;
-
-    throw new Error("Password errata");
 }
 
-renderLooms();
+chiediPassword();
